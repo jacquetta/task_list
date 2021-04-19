@@ -23,32 +23,32 @@
         </div>
     </header>
     <main class="container">
-        <br>
-        <h2>Add New Task</h2>
-        <br>
-        <form>
-            <div class="form-group">
-                <label for="taskName">Task Name</label>
-                <input type="text" class="form-control" id="taskName">
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="taskDescription">Task Description</label>
-                <input type="text" class="form-control" id="taskDescription">
-            </div>
-            <br>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="assignedTo">Assigned To</label>
-                    <input type="text" class="form-control" id="assignedTo">
+        <section>
+            <h2>Add New Task</h2>
+            <form>
+                <div class="form-group">
+                    <label for="taskName">Task Name</label>
+                    <input type="text" class="form-control" id="taskName">
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="dueDate">Due Date</label>
-                    <input type="date" class="form-control" id="dueDate">
+            
+                <div class="form-group">
+                    <label for="taskDescription">Task Description</label>
+                    <textarea type="text" class="form-control" id="taskDescription" row="3"></textarea>
                 </div>
-            </div>
-        </form>
-        
+            
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="assignedTo">Assigned To</label>
+                        <input type="text" class="form-control" id="assignedTo">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" class="form-control" id="dueDate">
+                    </div>
+                </div>
+                <button type="submit" class="btn col-md-6">Submit</button>
+            </form>
+        </section>
     </main>
 
 
