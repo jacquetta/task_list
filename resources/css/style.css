@@ -1,0 +1,15 @@
+body {
+    font-family:'Merriweather Sans', sans-serif;
+}
+
+.jumbotron {
+    height: 100px;
+    background-color: #a9aff2;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: extra-bold;
+}
