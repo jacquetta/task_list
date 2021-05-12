@@ -18,11 +18,14 @@ function validFormFieldInput(data){
 
   function validateForm() {
     let y = document.forms["formName"]["taskName"].value;
-    if (y == "") {
+    if (y == "" || y == null) {
       alert("Fill out all inputs!");
       let alertDialog = document.getElementById('submitBtn');
       alertDialog.style.display = 'block';
       return false;
+    } else {
+      alert('Task Added!');
+      return true;
     }
   }
 
