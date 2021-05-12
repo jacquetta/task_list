@@ -25,29 +25,29 @@
     <main class="container">
         <section class="task-form">
             <h2>Add New Task</h2>
-            <form>
+            <form name="formName">
                 <div class="form-group">
                     <label for="taskName">Task Name</label>
-                    <input type="text" class="form-control" id="taskName">
+                    <input type="text" class="form-control" id="taskName newTaskNameInput" name="taskName">
                 </div>
             
                 <div class="form-group">
                     <label for="taskDescription">Task Description</label>
-                    <textarea type="text" class="form-control" id="taskDescription" row="4"></textarea>
+                    <textarea type="text" class="form-control" id="taskDescription newTaskDescriptionInput" row="4"></textarea>
                 </div>
             
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="assignedTo">Assigned To</label>
-                        <input type="text" class="form-control" id="assignedTo">
+                        <input type="text" class="form-control" id="assignedTo newTaskAssignedInput">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="dueDate">Due Date</label>
-                        <input type="date" class="form-control" id="dueDate">
+                        <input type="date" class="form-control" id="dueDate newTaskDueDateInput">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="statusTask">Status</label>
-                        <select name="statusTask" id="statusTask" class="form-control">
+                        <select name="statusTask" id="statusTask newTaskStatus" class="form-control">
                             <option value="todo">TODO</option>
                             <option value="inProgress">IN PROGRESS</option>
                             <option value="review">REVIEW</option>
@@ -55,7 +55,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn col-md-6">Submit</button>
+                <button onclick="validateForm()" type="submit" class="btn col-md-6" id="submitBtn">Submit</button>
             </form>
         </section>
        
@@ -167,7 +167,7 @@
         </section>
     </main>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
