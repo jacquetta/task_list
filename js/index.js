@@ -1,3 +1,6 @@
+let tasks = new TaskManager();
+tasks.addEventListener('click', validateForm);
+
 const newTaskNameInput = document.getElementById('newTaskNameInput');
 const newTaskDescriptionInput = document.getElementById('newTaskDescriptionInput');
 const newTaskAssignedInput = document.getElementById('newTaskAssignedInput');
@@ -25,7 +28,11 @@ function validFormFieldInput(data){
       return false;
     } else {
       alert('Task Added!');
+      tasks.addTask();
       return true;
     }
   }
 
+// let tasks = new TaskManager();
+// tasks.addTask('Chores', 'mopping', 'James', '05/14/2021', 'Todo');
+console.log(tasks);
