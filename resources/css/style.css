@@ -23,7 +23,7 @@ label {
     font-weight: bold;
 }
 
-#taskDescription, #dueDate, #taskName, #assignedTo{
+#taskDescription, #dueDate, #taskName, #assignedTo, #statusTask{
     border: 3px solid #a9aff2;
 }
 
