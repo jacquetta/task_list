@@ -25,10 +25,10 @@
     <main class="container">
         <section class="task-form">
             <h2 class='add-new-task'>Add New Task</h2>
-            <form name="formName" id="formName">
+            <form name="formName" id="formName" method="post">
                 <div class="form-group">
                     <label for="taskName">Task Name</label>
-                    <input type="text" class="form-control" id="newTaskNameInput" name="taskName" required>
+                    <input type="text" class="form-control" id="newTaskNameInput" name="taskName">
                 </div>
             
                 <div class="form-group">
@@ -39,15 +39,15 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="assignedTo">Assigned To</label>
-                        <input type="text" class="form-control" id="newTaskAssignedInput">
+                        <input type="text" class="form-control" id="newTaskAssignedInput" name="assignedTo">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="dueDate">Due Date</label>
-                        <input type="date" class="form-control" id="newTaskDueDateInput">
+                        <input type="date" class="form-control" id="newTaskDueDateInput" name="dueDate">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="statusTask">Status</label>
-                        <select name="statusTask" id="newTaskStatus" class="form-control">
+                        <select name="statusTask" id="newTaskStatus" class="form-control" name="taskStatus">
                             <option value="todo">TODO</option>
                             <option value="inProgress">IN PROGRESS</option>
                             <option value="review">REVIEW</option>
