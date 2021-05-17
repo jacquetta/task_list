@@ -38,6 +38,7 @@ label {
     
 }
 
-.deleteBtn button {
-    margin: 20px 20px 50px 20px;
+.btn-div button {
+    height: 50px;
+    width: 132px;
 }

@@ -31,13 +31,21 @@ newForm.addEventListener('submit', (event) => {
     alert('Please select status');
     return false;
   }else{
+    alert("Task added")
     tasks.addTask(name, description, assignedTo, dueDate, status);
     tasks.render();
     return true;}
 });
 
+let listTasks = document.querySelector('#task-list');
+console.log(listTasks);
+listTasks.addEventListener('click', (event) => {
+  event.preventDefault();
+  if(event.target.classList.contains('done-button') == true){
+    let parentTask = document.querySelector('.list-group').children;
+    console.log(parentTask)
+  }
+});
 
-// let tasks = new TaskManager();
 
-
-// console.log(tasks);
+console.log(tasks);
