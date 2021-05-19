@@ -42,8 +42,9 @@ console.log(listTasks);
 listTasks.addEventListener('click', (event) => {
   event.preventDefault();
   if(event.target.classList.contains('done-button') == true){
-    let parentTask = document.querySelector('.list-group').children;
-    console.log(parentTask)
+    // let parentTask = document.querySelector('.list-group').children;
+    let parentTask = event.target.parentElement;
+    console.log(parentTask);
   }
 });
 

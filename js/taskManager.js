@@ -1,8 +1,7 @@
 const createTaskHtml = (name, description, assignedTo, dueDate, status, id)=> {
     const htmlData = 
-    `  <li class="list-group-item" data-task-id = ${id}>
-        <div class="card bg-light mb-3 list-group-item list-group-item-action" style="max-width: 18rem;">
-        <div class="card-header">Task ${id}</div>
+    `  <li id="item" class ="card bg-light mb-3 list-group-item list-group-item-action" style="max-width: 18rem;" data-task-id = ${id}>
+        <div class="card-header">Task</div>
         <div class="card-body container">
         <h5 class="card-title">${name}</h5>
         <p class="card-text">${description}</p>
@@ -16,11 +15,9 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id)=> {
             <option value="done">DONE</option>
         </select>
         </div>
-        <div class="btn-div row justify-content-around">
-             <button type="button"  class="btn edit-btn">Edit</button>
-             <button type="button" class="btn done-button">Mark As Done</button>
-         </div>
-      </div>
+        <button type="button"  class="btn edit-btn">Edit</button>
+        <button type="button" class="btn done-button">Mark As Done</button>
+
     </li>`
     return htmlData;
 }
@@ -42,7 +39,15 @@ class TaskManager {
        }
        this.tasks.push(newTask);
     }
-    
+    getTaskById(taskId){
+        let foundTask;
+        this.tasks.forEach(task => {
+            if(task.id == taskId){
+                foundTask = task;
+            }
+        })
+        return foundTask;
+    }
     render(){
         let taskHtmlList = [];
         this.tasks.forEach(task => {
@@ -58,5 +63,5 @@ class TaskManager {
 
 }
 
-console.log(TaskManager())
+// console.log(TaskManager())
 
