@@ -7,13 +7,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id)=> {
         <p class="card-text">${description}</p>
         <p class="card-text">${assignedTo}</p>
         <p class="card-text">${dueDate}</p>
-        <select name="statusTask" id="statusTask">
-            <option value="">${status}</option>
-            <option value="todo" selected>TODO</option>
-            <option value="inProgress">IN PROGRESS</option>
-            <option value="review">REVIEW</option>
-            <option value="done">DONE</option>
-        </select>
+        <p id="statusTask">${status}</p>
         </div>
         <button type="button"  class="btn edit-btn">Edit</button>
         <button type="button" class="btn done-button">Mark As Done</button>
@@ -24,7 +18,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id)=> {
 
 class TaskManager {
 
-    constructor(currentId = 1,){
+    constructor(currentId = 0,){
         this.tasks = [];
         this.currentId = currentId;
     }
@@ -48,6 +42,9 @@ class TaskManager {
         })
         return foundTask;
     }
+
+
+
     render(){
         let taskHtmlList = [];
         this.tasks.forEach(task => {
@@ -58,9 +55,8 @@ class TaskManager {
             taskHtmlList.push(taskHtml);
         });
         let tasksHtml = taskHtmlList.join('\n');
-        return document.querySelector('ul').innerHTML = tasksHtml;
+        document.querySelector('ul').innerHTML = tasksHtml;
      }
-
 }
 
 // console.log(TaskManager())
