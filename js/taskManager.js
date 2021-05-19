@@ -9,7 +9,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id)=> {
         <p class="card-text">${dueDate}</p>
         <p id="statusTask">${status}</p>
         </div>
-        <button type="button"  class="btn edit-btn">Edit</button>
+        <button type="button"  class="btn delete-button">Delete</button>
         <button type="button" class="btn done-button">Mark As Done</button>
 
     </li>`
@@ -43,7 +43,36 @@ class TaskManager {
         return foundTask;
     }
 
+    save(){
+        let tasksJson = JSON.stringify(this.tasks);
+        console.log(tasksJson);
+        localStorage.setItem('tasks', tasksJson);
+        let currentId = this.currentId.toString();
+        localStorage.setItem('currentId', currentId);
+    } 
 
+    load() {
+        if(localStorage.getItem('tasks')){
+            let tasksJson = localStorage.getItem('tasks');
+            this.tasks = JSON.parse(tasksJson);
+            console.log(tasksJson)
+        }
+        if(localStorage.getItem('currentId')){
+            let currentId = localStorage.getItem('currentId')
+            currentId = parseInt(currentId);
+            this.currentId = currentId;
+        }
+    }
+
+    deleteTask(taskId){
+        let newTasks = [];
+        this.tasks.forEach(task => {
+            if(task.id != taskId){
+                newTasks.push(task);
+            }
+        });
+        this.tasks = newTasks;
+    }
 
     render(){
         let taskHtmlList = [];

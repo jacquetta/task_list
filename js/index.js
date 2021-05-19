@@ -1,4 +1,6 @@
 let tasks = new TaskManager();
+tasks.load();
+tasks.render();
 let taskHtml = createTaskHtml();
 
 
@@ -34,6 +36,7 @@ newForm.addEventListener('submit', (event) => {
     alert("Task added")
     tasks.addTask(name, description, assignedTo, dueDate, status);
     tasks.render();
+    tasks.save();
     return true;}
 });
 
@@ -49,8 +52,16 @@ listTasks.addEventListener('click', (event) => {
     let task = tasks.getTaskById(taskId);
     task.status = 'DONE';
     tasks.render();
+    tasks.save();
+  } 
+  if(event.target.classList.contains('delete-button') == true){
+    let parentTask = event.target.parentElement;
+    let taskId = parseInt(parentTask.getAttribute("data-task-id"));
+    tasks.deleteTask(taskId)
+    tasks.save();
+    tasks.render();
   }
-});
 
+});
 
 console.log(tasks);
