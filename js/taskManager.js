@@ -87,6 +87,7 @@ class TaskManager {
         document.querySelector('ul').innerHTML = tasksHtml;
      }
 }
-
+//Testing Mocha below:
+// module.exports = TaskManager;
 // console.log(TaskManager())
 
