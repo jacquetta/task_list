@@ -14,6 +14,10 @@ h1 {
     font-weight: extra-bold;
 }
 
+main {
+    margin-bottom: 50px;
+}
+
 .form-group {
     margin-top: 20px;
     
@@ -41,4 +45,13 @@ label {
 .btn-div button {
     height: 50px;
     width: 132px;
+}
+
+footer {
+    
+    background-color: #a9aff2;
+}
+.footer-p{
+    margin-top: 10px;
+    text-align: center;
 }
